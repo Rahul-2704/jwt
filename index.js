@@ -2,6 +2,7 @@ import express from 'express';
 import authRoutes from './routes/user.js'
 import protectedRoute from './routes/protected.js';
 import connectDB from './mongo.js';
+import 'dotenv/config';
 
 const app=express();
 connectDB();

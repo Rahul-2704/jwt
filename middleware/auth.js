@@ -5,7 +5,7 @@ export function verifyToken(req,res,next){
     console.log('token::',token)
     if(!token) return res.status(401).json({error:'Access Denied.'})
     try {
-        const decoded=jwt.verify(token,'rahul-ruke');
+        const decoded=jwt.verify(token,process.env.SECRET);
         req.userId=decoded.userId;
         next();
     } catch (error) {
